@@ -1,0 +1,16 @@
+{
+  "name": "pern",
+  "version": "1.0.0",
+  "description": "PERN Stack Todo List",
+  "main": "index.js",
+  "scripts": {
+    "test": "]"
+  },
+  "author": "Didi",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  }
+}
