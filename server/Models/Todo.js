@@ -6,7 +6,8 @@ const todos = sequelize.define('todos', {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4
   },
-  description: DataTypes.STRING
+  description: DataTypes.STRING,
+  category: DataTypes.STRING,
 })
 
 module.exports = todos

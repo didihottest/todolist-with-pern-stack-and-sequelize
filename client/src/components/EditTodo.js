@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import Swal from "sweetalert2";
 
 const EditTodo = ({ todo }) => {
     const [description, setDescription] = useState(todo.description)
@@ -6,6 +7,12 @@ const EditTodo = ({ todo }) => {
     // edit description
     const updateDescription = async (event) => {
         event.preventDefault();
+        if(description.trim().length === 0)  return Swal.fire({
+            title: 'Error!',
+            text: 'La descripcion no puede ser vacía',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+          });
         try {
             const body = { description };
             const response = await fetch(`http://localhost:5000/todos/${todo.id}`, {

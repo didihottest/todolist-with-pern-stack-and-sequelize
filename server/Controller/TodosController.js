@@ -10,10 +10,11 @@ exports.getTodos = (req, res, next) => {
 }
 
 exports.postTodos = async (req, res, next) => {
-  const { description } = req.body
+  const { description, category } = req.body
   try {
     const newTodos = await Todos.create({
-      description: description
+      description: description,
+      category,
     })
     res.status(200).json({
       newEntry: newTodos
